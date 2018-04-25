@@ -4,16 +4,34 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour {
 
+    public GameObject weapon01;
+    public GameObject weapon02;
+
     public GameObject bulletSpawnPoint;
     public GameObject bulletPrefab;
 
     void Start()
     {
+        weapon01.SetActive(true);
+        weapon02.SetActive(false);
     }
 
     void Update()
     {
-        if(Input.GetButtonDown("Fire1"))
+        if(Input.GetKeyDown("1"))
+        {
+            weapon01.SetActive(true);
+            weapon02.SetActive(false);
+        }
+
+        if (Input.GetKeyDown("2"))
+        {
+            weapon01.SetActive(false);
+            weapon02.SetActive(true);
+        }
+
+
+        if (Input.GetButtonDown("Fire1"))
         {
             
             GameObject bullet = GameObject.Instantiate<GameObject>(bulletPrefab);
