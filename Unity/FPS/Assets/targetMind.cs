@@ -29,6 +29,8 @@ public class targetMind : MonoBehaviour
 		minPos = transform.position;
 		maxPos.x = temp + 5;
 		minPos.x = temp - 5;
+
+
 	}
 
 	// Update is called once per frame
