@@ -7,12 +7,29 @@ public class Gun : MonoBehaviour {
     public GameObject bulletSpawnPoint;
     public GameObject bulletPrefab;
 
+    public GameObject weapon01;
+    public GameObject weapon02;
+
     void Start()
     {
+        weapon01.SetActive(true);
+        weapon02.SetActive(false);
     }
 
     void Update()
     {
+        if(Input.GetKeyDown("1"))
+        {
+            weapon01.SetActive(true);
+            weapon02.SetActive(false);
+        }
+
+        if(Input.GetKeyDown("2"))
+        {
+            weapon01.SetActive(false);
+            weapon02.SetActive(true);
+        }
+
         if(Input.GetButtonDown("Fire1"))
         {
             
