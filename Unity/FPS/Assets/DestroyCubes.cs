@@ -1,28 +1,31 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class DestroyCubes : MonoBehaviour {
 
-    public float health = 50f;
+    private int count;
+
+    public Text countText;
+
+    private void Start()
+    {
+        count = 0;
+        countText.text = "Count: " + count.ToString();
+
+    }
 
     private void OnCollisionEnter(Collision bulletPrefab)
     {
-        /*   if(bulletPrefab.gameObject.name == "Crate001")
-           {
-               if (health < 0)
-               {
-                   Destroy(bulletPrefab.gameObject);
-               }
-               else
-               {
-                   health = health - 10f;
-               }
 
-           }*/
         if (bulletPrefab.gameObject.name == "Cube")
         {
             Destroy(bulletPrefab.gameObject);
+            count = count + 1;
+            countText.text = "Count: " + count.ToString();
+
         }
 
     }
