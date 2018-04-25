@@ -41,6 +41,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_NextStep;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
+        float x = 5f, y = 1f, z = 20f;
+        private Vector3 StartPos;
 
         // Use this for initialization
         private void Start()
@@ -55,6 +57,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
+            StartPos = new Vector3(x, y, z);
+            transform.position = StartPos;
         }
 
 
