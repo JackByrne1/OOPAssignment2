@@ -59,6 +59,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			m_MouseLook.Init(transform , m_Camera.transform);
             StartPos = new Vector3(x, y, z);
             transform.position = StartPos;
+            transform.eulerAngles = new Vector3(0, 125, 0);
         }
 
 
