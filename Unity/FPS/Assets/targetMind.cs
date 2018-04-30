@@ -19,7 +19,7 @@ public class targetMind : MonoBehaviour
 
     void Start()
     {
-        var randomInt1 = Random.Range(-10, 10);
+        var randomInt1 = Random.Range(-15, 15);
         var randomInt2 = Random.Range(-10, 10);
         var randomInt3 = Random.Range(1, 5);
         Tspeed = randomInt3;
