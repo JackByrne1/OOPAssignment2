@@ -2,3 +2,6 @@ sceneSetups:
 - path: Assets/Menu.unity
   isLoaded: 1
   isActive: 1
+- path: Assets/prac.unity
+  isLoaded: 0
+  isActive: 0

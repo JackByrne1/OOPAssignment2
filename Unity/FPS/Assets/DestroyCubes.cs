@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DestroyCubes : MonoBehaviour {
 
-    public float health = 50f;
+    public float score = 0;
 
     private void OnCollisionEnter(Collision bulletPrefab)
     {
@@ -20,11 +20,28 @@ public class DestroyCubes : MonoBehaviour {
                }
 
            }*/
-        if (bulletPrefab.gameObject.name == "Cube")
+	
+        if(bulletPrefab.gameObject.name == "Cube")
         {
+			score = score + 10;
             Destroy(bulletPrefab.gameObject);
         }
 
     }
+    
+	/*public void TakeDamage(float amount)
+	{
+		health -= amount;
+
+		if (health <= 0f)
+		{
+			Die ();
+		}
+	}
+
+	void Die()
+	{
+		Destroy (gameObject);
+	}*/
 
 }
