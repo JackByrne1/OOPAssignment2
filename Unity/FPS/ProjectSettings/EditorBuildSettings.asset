@@ -11,3 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/prac.unity
     guid: 70c6576daf47740438ec60a141e3108c
+  - enabled: 1
+    path: Assets/prac2.unity
+    guid: 76aea8c0ccfb6c34a9ea18e16975f749
+  - enabled: 1
+    path: Assets/prac3.unity
+    guid: 9dadcf0d98e38ec4ab45d47e3127ec95

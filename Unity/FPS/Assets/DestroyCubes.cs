@@ -8,19 +8,6 @@ public class DestroyCubes : MonoBehaviour {
 
     private void OnCollisionEnter(Collision bulletPrefab)
     {
-	
-        if(bulletPrefab.gameObject.name == "Cube")
-        {
-			score = score + 10;
-            Destroy(bulletPrefab.gameObject);
-        }
-
-    }
-    
-	
-
-}
-
         /*   if(bulletPrefab.gameObject.name == "Crate001")
            {
                if (health < 0)
@@ -33,8 +20,16 @@ public class DestroyCubes : MonoBehaviour {
                }
 
            }*/
-           
-    /*public void TakeDamage(float amount)
+	
+        if(bulletPrefab.gameObject.name == "Cube")
+        {
+			score = score + 10;
+            Destroy(bulletPrefab.gameObject);
+        }
+
+    }
+    
+	/*public void TakeDamage(float amount)
 	{
 		health -= amount;
 
@@ -48,3 +43,5 @@ public class DestroyCubes : MonoBehaviour {
 	{
 		Destroy (gameObject);
 	}*/
+
+}
