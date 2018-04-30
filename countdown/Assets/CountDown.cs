@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CountDown : MonoBehaviour {
 
-    float timeRemaining = 60;
+    float timeRemaining = 15;
 
 	// Use this for initialization
 	void Start () {

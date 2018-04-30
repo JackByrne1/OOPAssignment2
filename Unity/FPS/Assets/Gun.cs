@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Gun : MonoBehaviour {
 
@@ -11,7 +12,8 @@ public class Gun : MonoBehaviour {
 	public float damage = 10f;
 	public float range = 1000f;
 	public float impactForce = 50f;
-	public float score = 0;
+	public float score = 5;
+    public Text scoreText;
 
 	public Camera fpsCam;
 	// public ParticleSystem muzzleFlash;
@@ -75,14 +77,12 @@ public class Gun : MonoBehaviour {
 			if (target != null)
 			{
 				target.TakeDamage(damage);
+                score = score + 5;
+                scoreText.text = "score: " + score.ToString();
 
-			}
+            }
 
-			if (hit.rigidbody != null)
-			{
-				hit.rigidbody.AddForce(-hit.normal * impactForce);
-				score = score + 5;
-			}
+           
 
 			//  GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
 			//Destroy(impactGO, 2f);
