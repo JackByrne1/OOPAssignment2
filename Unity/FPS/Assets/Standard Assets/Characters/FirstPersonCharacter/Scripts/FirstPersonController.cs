@@ -41,8 +41,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_NextStep;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
-        float x = 5f, y = 1f, z = 20f;
+        float x = 5f, y = 1f, z = 20f,RY = -155;
         private Vector3 StartPos;
+		private Vector3 StartRotation;
 
         // Use this for initialization
         private void Start()
@@ -59,6 +60,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			m_MouseLook.Init(transform , m_Camera.transform);
             StartPos = new Vector3(x, y, z);
             transform.position = StartPos;
+			StartRotation = new Vector3(0,RY,0);
+			transform.eulerAngles = StartRotation;
         }
 
 
