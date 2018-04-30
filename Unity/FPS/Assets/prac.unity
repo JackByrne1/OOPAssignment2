@@ -322,7 +322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dd95d717c1f0614585893a23f2e1408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  score: 0
 --- !u!1 &102021079
 GameObject:
   m_ObjectHideFlags: 0
@@ -448,7 +448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dd95d717c1f0614585893a23f2e1408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  score: 0
 --- !u!1 &235718042 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100002, guid: 6f8ee9e57f0ae87429c40e77c8b75822, type: 3}
@@ -470,6 +470,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon01: {fileID: 1482413282}
   weapon02: {fileID: 235718042}
+  damage: 10
+  range: 100
+  impactForce: 50
+  score: 0
+  fpsCam: {fileID: 1445512654}
   bulletSpawnPoint: {fileID: 964944357}
   bulletPrefab: {fileID: 102021079}
 --- !u!111 &235718046
@@ -588,7 +593,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.008726558
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_LocalRotation.y
@@ -600,7 +605,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.999962
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_RootOrder
@@ -616,7 +621,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -741,7 +746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dd95d717c1f0614585893a23f2e1408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  score: 0
 --- !u!54 &423368927
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1002,6 +1007,7 @@ GameObject:
   - component: {fileID: 662061178}
   - component: {fileID: 662061177}
   - component: {fileID: 662061181}
+  - component: {fileID: 662061182}
   m_Layer: 0
   m_Name: Crate001
   m_TagString: Untagged
@@ -1090,6 +1096,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &662061182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 662061176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 712ee3092d6d0944b9a30159ec33ed75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 50
 --- !u!4 &742222394 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
@@ -1522,6 +1540,7 @@ GameObject:
   - component: {fileID: 1273899673}
   - component: {fileID: 1273899672}
   - component: {fileID: 1273899676}
+  - component: {fileID: 1273899677}
   m_Layer: 0
   m_Name: Crate002
   m_TagString: Untagged
@@ -1610,6 +1629,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1273899677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1273899671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 712ee3092d6d0944b9a30159ec33ed75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 50
 --- !u!1001 &1318326816
 Prefab:
   m_ObjectHideFlags: 0
@@ -1631,19 +1662,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 6f8ee9e57f0ae87429c40e77c8b75822, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0.008726558
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 6f8ee9e57f0ae87429c40e77c8b75822, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 6f8ee9e57f0ae87429c40e77c8b75822, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 6f8ee9e57f0ae87429c40e77c8b75822, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.999962
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 6f8ee9e57f0ae87429c40e77c8b75822, type: 3}
       propertyPath: m_RootOrder
@@ -1663,7 +1694,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 6f8ee9e57f0ae87429c40e77c8b75822, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: 6f8ee9e57f0ae87429c40e77c8b75822, type: 3}
       propertyPath: m_RootOrder
@@ -1692,6 +1723,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6f8ee9e57f0ae87429c40e77c8b75822, type: 3}
   m_IsPrefabParent: 0
+--- !u!20 &1445512654 stripped
+Camera:
+  m_PrefabParentObject: {fileID: 2000000, guid: 5e9e851c0e142814dac026a256ba2ac0,
+    type: 2}
+  m_PrefabInternal: {fileID: 356277805}
 --- !u!1 &1482413282 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 084a19e5cb5520e46a4d4ac11b06443d, type: 3}
@@ -1709,6 +1745,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon01: {fileID: 1482413282}
   weapon02: {fileID: 235718042}
+  damage: 10
+  range: 100
+  impactForce: 200
+  score: 0
+  fpsCam: {fileID: 1445512654}
   bulletSpawnPoint: {fileID: 964944357}
   bulletPrefab: {fileID: 102021079}
 --- !u!82 &1482413288
@@ -1823,7 +1864,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dd95d717c1f0614585893a23f2e1408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  score: 0
 --- !u!54 &1503177371
 Rigidbody:
   m_ObjectHideFlags: 0
